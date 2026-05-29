@@ -26,8 +26,7 @@ cols = [ "avg_rating", "avg_difficulty", "num_ratings",
     "pepper", "retake_pct", "online_ratings",
     "male", "female"]
 
-df = pd.read_csv("/Users/wangtianyi/Downloads/college/PODS/capstone project/rmpCapstoneNum.csv", 
-                  header=None, names=cols)
+df = pd.read_csv("rmpCapstoneNum.csv", header=None, names=cols)
 
 #clean data
 print(df['num_ratings'].describe(percentiles=[.25,.5,.75,.9,.95]))
@@ -423,8 +422,7 @@ plt.show()
 # ----------------------------------- extra credit ----------------------------------------
 
 num = df
-qual = pd.read_csv('/Users/wangtianyi/Downloads/college/PODS/capstone project/rmpCapstoneQual.csv', header=None,
-                   names=['major','university','state'])
+qual = pd.read_csv('rmpCapstoneQual.csv', header=None, names=['major','university','state'])
 df_ex = pd.concat([num, qual['state']], axis=1)
 
 df_ex = df_ex[df_ex['num_ratings'] >= 6]
@@ -456,21 +454,3 @@ plt.title('Bottom 10 States by Mean Professor Rating (n ≥ 100)')
 plt.ylabel('Mean Rating')
 plt.tight_layout()
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
